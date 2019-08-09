@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card.js'
 import {getItem} from '../Servicios/items'
-
+import Seller from './Seller'
 import Buscar from './Busqueda'
 
 
@@ -12,14 +12,17 @@ class ItemContainer extends React.Component{
         this.state={
             items: [],
             seller:'',
+            
             isFetch: true,
             initial:false,
         }
         
     }
     
-    async componentDidMount(){        
-        this.setState({isFetch:false})                
+    async componentDidMount(){ 
+             
+        this.setState({isFetch:false})
+                        
     }    
 
     handleSearch=async(e)=>{
@@ -52,12 +55,13 @@ class ItemContainer extends React.Component{
                 {                    
                     items.map((item)=> <Card 
                     name={item.title} 
-                    image={item.thumbnail}
-                    condition={item.condition}
-                    price={item.price}  
-                    seller={item.seller.id}                                              
-                    key={item.id}/>)                    
-                }
+                    image={item.thumbnail}                    
+                    price={item.price}            
+                    sell = {item.seller.id}                                                               
+                    key={item.id}/>
+                    )                                
+                                          
+                }               
                 
                 </div>
                 </div>        
