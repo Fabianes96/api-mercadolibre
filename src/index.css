@@ -1,44 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-body{
-  font-family: 'Roboto', sans-serif;
-  background: #D3CCE3;  /* fallback for old browsers */
+body {
+  background: #D3CCE3;  /* fallback for old browsers */ 
   background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-img{
-  width: 100px;
-  height: 100px;
-  margin: 0;
-}
-.Nav{
-  padding: 200px;
-}
-
-.item-container{
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: space-between;
-}
-
-.single-item{
-  flex-shrink:1;
-  flex-basis: 24%;
 
 }
-
 
 .search-container{
-
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.search-input{
+    width: calc(45% - 2em);
+    border: 1px solid gray;
+    border-radius: 5pc
+}
+.img-logo{
   display: flex;
-  justify-content: center;
-  padding: 4px 9px;
+  margin:auto;
 
 }
-.form-control{
-  padding: 3px 8px;
-  width: calc(30%-2em);
-  border: 1px solid gray;
-  border-radius: 5px;
-}
-

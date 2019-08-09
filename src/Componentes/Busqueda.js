@@ -8,30 +8,30 @@ class Busqueda extends React.Component{
         this.state= {busqueda:''}
     }
     handleChange=(e)=>{
+        e.preventDefault();    
         this.setState({busqueda:e.target.value})
     }
 
     render(){
         const {handleSearch} = this.props
         const {busqueda}= this.state
-        return(
-            <div className="card">
-                <form className="card-body">
-                <div className="form-group">
-                <input
-                    value={busqueda}
-                    onChange ={this.handleChange}
-                    className="form-control"
-                    type="text"
-                />
-                </div>
-                </form>
-                <div>
-                    <button className="btn btn-primary" type="submit" onClick={()=>handleSearch(busqueda)} >
-                    Buscar
-                </button>              
-                </div>                 
-            </div>
+        
+        return(            
+        <div className="card" onSubmit={this.handleChange} className="card-body">          
+          <div className="form-group">
+            <input className="search-input"
+              type="text"               
+              value={busqueda}
+              onChange={this.handleChange}              
+              />
+          </div>
+          <button type="submit" className="btn btn-primary" onClick={()=>handleSearch(busqueda)}>
+            Buscar
+          </button>
+      </div>
+         
+      
+        
         )
     }
 }
